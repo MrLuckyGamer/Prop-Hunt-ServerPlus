@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<!--<html manifest="snake.appcache">-->
+<head>
+<!--
+
+JavaScript Snake
+By Patrick Gillespie
+http://patorjk.com/games/snake
+
+Source code is available here: https://github.com/patorjk/JavaScript-Snake
+
+--> 
+    <meta charset="utf-8">
+    <title>JavaScript Snake</title>
+    <link rel='stylesheet' id='style' type='text/css' href='./css/_snake.css' />
+    <div id="mode-wrapper">Difficulty: <button id="Easy">Easy</button>&nbsp;<button id="Medium">Medium</button>&nbsp;<button id="Difficult">Hard</button> (After selecting, click on Main Area to begin!)</div>
+<script>
+function getTheme () {
+    function changeTheme (Theme) {
+        document.getElementById('style').setAttribute('href', Theme);
+    }
+    var index = document.getElementById("select").selectedIndex;
+    switch (index) {
+        case 0: 
+          changeTheme('css/dark-snake.css');
+          break;
+          case 1: changeTheme('css/main-snake.css');
+    }
+}
+</script>
+</head>
+<body>
+    <div id="game-area" tabindex="0">
+    </div>
+    <script type="text/javascript" src="./js/isnake.js"></script>
+    <script type="text/javascript">
+    var mySnakeBoard = new SNAKE.Board(
+	{
+		boardContainer: "game-area",
+		fullScreen: true
+	});
+    </script>
+</body>
+</html>
